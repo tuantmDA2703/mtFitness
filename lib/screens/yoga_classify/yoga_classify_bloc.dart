@@ -33,7 +33,7 @@ class YogaClassifyBloc extends BlocBase {
       if(imgUrl!=AppConfig.none){
         ClassifyResponse? response = await yogaPoseRepository.requestClassify(imgUrl);
         if(response!=null){
-          printData(AppConfig.result, response.labelName);
+          printData(AppConfig.result, response.labelName+' confidence: ${response.confidence}');
           await firebaseRepository.delete(imgUrl);
         }else{
           printData(AppConfig.result, AppConfig.none);

@@ -1,5 +1,3 @@
-import 'dart:typed_data';
-
 import 'package:mt_fitness/base/network_client.dart';
 import 'package:mt_fitness/config/app_config.dart';
 import 'package:mt_fitness/repository/yoga_pose_repository.dart';
@@ -15,7 +13,7 @@ class YogaPoseRepositoryImpl implements YogaPoseRepository {
     dio.options.headers['Content-Type'] = 'application/json';
     try {
       var response = await dio.post(
-          'https://www.nyckel.com/v1/functions/nq0z69mnmf3aackc/invoke',
+          'https://www.nyckel.com/v1/functions/8jdoo31m41a2lltv/invoke',
           data: {'data': data});
       if (response.statusCode == 200) {
         ClassifyResponse classifyResponse =
